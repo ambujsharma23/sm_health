@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div>
+                <mat-icon>location_on</mat-icon>
+                <span>Choose Location</span>
+            </div>
+            <div>
+                <mat-radio-group class="branch-radio-group">
+                    <mat-radio-button class="branch-radio-btn" *ngFor="let branch of branches" [value]="branch">{{branch}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" mat-raised-button color="primary">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

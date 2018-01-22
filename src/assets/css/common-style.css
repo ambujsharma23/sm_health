@@ -1,0 +1,29 @@
+/* Material Design CSS */
+.mat-form-field-infix {
+    width: 900px !important;
+}
+
+input.mat-chip-input {
+    width: 100% !important;
+}
+
+.mat-chip-list-wrapper {
+    margin-bottom: 10px;
+}
+
+.mat-chip {
+    margin-bottom: 5px;
+}
+
+/* Normal CSS */
+.margin-top {
+    margin-top: 20px;
+}
+
+.sh-card-margin {
+    margin-bottom: 15px;
+}
+
+.sh-favlist-margin {
+    margin-bottom: 20px;
+}

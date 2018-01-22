@@ -1,0 +1,16 @@
+.branch-radio-group {
+    margin-bottom: 20px;
+}
+
+.branch-radio-btn {
+    margin-top: 10px;
+    /* margin-left: 8px; */
+}
+
+.branch-radio-group .branch-radio-btn {
+    display: block;
+}
+
+.submit-btn {
+    margin-top: 10px;
+}

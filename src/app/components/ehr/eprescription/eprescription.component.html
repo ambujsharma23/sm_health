@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 margin-top">
+            <fieldset>
+                <legend>EHR Form</legend>
+            </fieldset>
+            <!-- Presenting Complaint -->
+            <mat-card class="sh-card-margin">
+                <mat-chip-list>
+                    <span style="color: darkslategray; margin-right: 5px">Favourite List</span>
+                    <mat-chip *ngFor="let tag of favListPC" color="primary" [selected]="true" (click)="onChipClick($event, tag, 'pc')">
+                        {{tag.text}}
+                    </mat-chip>
+                </mat-chip-list>
+                <mat-form-field>
+                    <mat-chip-list #chipPCList>
+                        <mat-chip *ngFor="let tag of selectedPCValues" (remove)="remove(tag, 'pc')">
+                            {{tag.text}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input [matChipInputFor]="chipPCList" [matChipInputAddOnBlur]="false" [matAutocomplete]="autoPC" (keyup)="getSmartSuggestions($event, 'pc')"
+                            placeholder="Presenting Complaint(Enter atleast 3 characters for auto suggestions)" #chipPCInput>
+                    </mat-chip-list>
+
+                    <mat-autocomplete #autoPC="matAutocomplete" (optionSelected)="addSelectedOption($event, 'pc')">
+                        <mat-option *ngFor="let option of getFilteredSource('pc')" [value]="option">
+                            <span>{{ option.text }}</span>
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </mat-card>
+
+            <!-- General Examination -->
+            <mat-card class="sh-card-margin">
+                <mat-chip-list>
+                    <span style="color: darkslategray; margin-right: 5px">Favourite List</span>
+                    <mat-chip *ngFor="let tag of favListGE" color="primary" [selected]="true" (click)="onChipClick($event, tag, 'ge')">
+                        {{tag.text}}
+                    </mat-chip>
+                </mat-chip-list>
+                <mat-form-field>
+                    <mat-chip-list #chipGEList>
+                        <mat-chip *ngFor="let tag of selectedGEValues" (remove)="remove(tag, 'ge')">
+                            {{tag.text}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input [matChipInputFor]="chipGEList" [matChipInputAddOnBlur]="false" [matAutocomplete]="autoGE" (keyup)="getSmartSuggestions($event, 'ge')"
+                            placeholder="General Examination(Enter atleast 3 characters for auto suggestions)" #chipGEInput>
+                    </mat-chip-list>
+
+                    <mat-autocomplete #autoGE="matAutocomplete" (optionSelected)="addSelectedOption($event, 'ge')">
+                        <mat-option *ngFor="let option of getFilteredSource('ge')" [value]="option">
+                            <span>{{ option.text }}</span>
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </mat-card>
+
+            <!-- Final Diagnosis -->
+            <mat-card class="sh-card-margin">
+                <mat-chip-list>
+                    <span style="color: darkslategray; margin-right: 5px">Favourite List</span>
+                    <mat-chip *ngFor="let tag of favListFD" color="primary" [selected]="true" (click)="onChipClick($event, tag, 'fd')">
+                        {{tag.text}}
+                    </mat-chip>
+                </mat-chip-list>
+                <mat-form-field>
+                    <mat-chip-list #chipFDList>
+                        <mat-chip *ngFor="let tag of selectedFDValues" (remove)="remove(tag, 'fd')">
+                            {{tag.text}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input [matChipInputFor]="chipFDList" [matChipInputAddOnBlur]="false" [matAutocomplete]="autoFD" (keyup)="getSmartSuggestions($event, 'fd')"
+                            placeholder="Final Diagnosis(Enter atleast 3 characters for auto suggestions)" #chipFDInput>
+                    </mat-chip-list>
+
+                    <mat-autocomplete #autoFD="matAutocomplete" (optionSelected)="addSelectedOption($event, 'fd')">
+                        <mat-option *ngFor="let option of getFilteredSource('fd')" [value]="option">
+                            <span>{{ option.text }}</span>
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </mat-card>
+
+            <!-- Procedures -->
+            <mat-card class="sh-card-margin">
+                <mat-chip-list>
+                    <span style="color: darkslategray; margin-right: 5px">Favourite List</span>
+                    <mat-chip *ngFor="let tag of favListPD" color="primary" [selected]="true" (click)="onChipClick($event, tag, 'pd')">
+                        {{tag.text}}
+                    </mat-chip>
+                </mat-chip-list>
+                <mat-form-field>
+                    <mat-chip-list #chipPDList>
+                        <mat-chip *ngFor="let tag of selectedPDValues" (remove)="remove(tag, 'pd')">
+                            {{tag.text}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input [matChipInputFor]="chipPDList" [matChipInputAddOnBlur]="false" [matAutocomplete]="autoPD" (keyup)="getSmartSuggestions($event, 'pd')"
+                            placeholder="Procedures (Enter atleast 3 characters for auto suggestions)" #chipPDInput>
+                    </mat-chip-list>
+
+                    <mat-autocomplete #autoPD="matAutocomplete" (optionSelected)="addSelectedOption($event, 'pd')">
+                        <mat-option *ngFor="let option of getFilteredSource('pd')" [value]="option">
+                            <span>{{ option.text }}</span>
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </mat-card>
+        </div>
+    </div>
+</div>
